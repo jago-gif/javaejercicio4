@@ -16,4 +16,9 @@ public class Platea extends Asiento {
     public void setAcolchado(boolean acolchado) {
         this.acolchado = acolchado;
     }
+
+    @Override
+    public String toString() {
+        return "Los asientos de palco cuentan con acolchado en asiento y apoya brazos";
+    }
 }

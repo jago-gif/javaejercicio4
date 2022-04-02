@@ -1,16 +1,16 @@
 package cl.trabajo4;
 
 public class Asiento {
-    private int NumAsiento;
-    private int ValorAsiento;
-    private boolean Reservado;
-    private String TipoDeAsiento;
-    private String DescripcionDeAsiento;
+    protected int NumAsiento;
+    protected int ValorAsiento;
+    protected boolean Reservado;
+    protected String TipoDeAsiento;
 
     public Asiento(int numAsiento, int valorAsiento, boolean reservado, String tipoDeAsiento) {
         NumAsiento = numAsiento;
         ValorAsiento = valorAsiento;
         Reservado = reservado;
+        TipoDeAsiento = tipoDeAsiento;
     }
 
     public int getNumAsiento() {

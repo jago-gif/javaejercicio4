@@ -9,11 +9,16 @@ public class Palco extends Asiento{
     }
 
     public boolean isAcolchado() {
-        System.out.println("Los asientos de palco cuentan con acolchado en asiento y apoya brazos");
         return acolchado;
     }
 
     public void setAcolchado(boolean acolchado) {
         this.acolchado = acolchado;
+    }
+
+    @Override
+    public String toString() {
+        return "Los asientos de palco cuentan con acolchado en asiento y apoya brazos";
+
     }
 }

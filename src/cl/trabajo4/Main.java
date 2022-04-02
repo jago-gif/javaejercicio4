@@ -82,17 +82,19 @@ public class Main {
         System.out.println("Estos son los asientos disponibles ");
         for(int i= 0 ; i<galeriaList.size(); i++){
             if (!galeriaList.get(i).isReservado()){
-                System.out.println("Asiento numero ["+galeriaList.get(i).getNumAsiento()+"]");
+                System.out.println("Asiento "+galeriaList.get(i).TipoDeAsiento +" numero ["+galeriaList.get(i).getNumAsiento()+"]");
             }
         }
         for(int i= 0 ; i<plateaList.size(); i++){
             if (!plateaList.get(i).isReservado()){
-                System.out.println("Asiento numero ["+plateaList.get(i).getNumAsiento()+"]");
+                System.out.println("Asiento "+plateaList.get(i).TipoDeAsiento+" numero ["+
+                        plateaList.get(i).getNumAsiento()+"] "+ plateaList.get(i).toString());
             }
         }
         for(int i= 0 ; i<palcoList.size(); i++){
             if (!palcoList.get(i).isReservado()){
-                System.out.println("Asiento numero ["+palcoList.get(i).getNumAsiento()+"]");
+                System.out.println("Asiento "+palcoList.get(i).TipoDeAsiento+" numero ["
+                        +palcoList.get(i).getNumAsiento()+"] "+palcoList.get(i).toString());
             }
         }
     }
