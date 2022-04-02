@@ -67,16 +67,23 @@ public class ImplementarMain implements IImplementarMain {
     }
 
     @Override
-    public void reservar(ArrayList<Palco> palcoList, ArrayList<Platea> plateaList, ArrayList<Galeria> galeriaList, int opcion, int numeral) {
+    public void reservar(ArrayList<Palco> palcoList, ArrayList<Platea> plateaList, ArrayList<Galeria> galeriaList,
+                         String opcion, int numeral, int menu2) {
         Scanner scan = new Scanner(System.in);
         boolean bandera = true;
         //platea tiene asientos desde el 34 al 66, galeria tiene asientos desde 1 al 33 y los demas son palco
         System.out.println("Los asientos de galeria son desde el [1 hasta el 33], platea desde [34 al 66] y palco " +
                 "desde [67 al 100]");
         System.out.println("escriba el numero del asiento que desea");
-        opcion=scan.nextInt();
+        opcion=scan.nextLine();
+        try {
+            menu2 = Integer.parseInt(opcion);
+        } catch (NumberFormatException ex) {
+            System.out.println("Error !"+ ex.getMessage()+" No es un numero");
+            menu2 = 100;
+        }
         for (int i=0; i<palcoList.size(); i++) {
-            if (palcoList.get(i).getNumAsiento() == opcion) {
+            if (palcoList.get(i).getNumAsiento() == menu2) {
                 bandera = false;
                 if (!palcoList.get(i).isReservado()) {
                     palcoList.get(i).setReservado(true);
@@ -87,7 +94,7 @@ public class ImplementarMain implements IImplementarMain {
             }
         }
         for (int o=0; o<plateaList.size(); o++) {
-            if (plateaList.get(o).getNumAsiento() == opcion) {
+            if (plateaList.get(o).getNumAsiento() == menu2) {
                 bandera = false;
                 if (!plateaList.get(o).isReservado()) {
                     plateaList.get(o).setReservado(true);
@@ -98,7 +105,7 @@ public class ImplementarMain implements IImplementarMain {
             }
         }
         for (int u=0; u<plateaList.size(); u++) {
-            if (galeriaList.get(u).getNumAsiento() == opcion) {
+            if (galeriaList.get(u).getNumAsiento() == menu2) {
                 bandera = false;
                 if (!galeriaList.get(u).isReservado()) {
                     galeriaList.get(u).setReservado(true);

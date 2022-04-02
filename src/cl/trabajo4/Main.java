@@ -8,7 +8,8 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int numeral=1;
         int opcion=0;
-        int menu=0;
+        int menu2=0;
+        String menu;
         ArrayList<Palco> palcoList = new ArrayList<>();
         ArrayList<Galeria>galeriaList = new ArrayList<>();
         ArrayList<Platea>plateaList = new ArrayList<>();
@@ -29,11 +30,17 @@ public class Main {
             System.out.println(" presiona [1] para reservar asiento");
             System.out.println(" presiona [2] para ver asientos disponibles");
             System.out.println(" presiona [3] para ver total recaudado");
-            menu=scan.nextInt();
-            switch (menu){
+            menu=scan.nextLine();
+            try {
+                menu2 = Integer.parseInt(menu);
+            } catch (NumberFormatException ex) {
+                System.out.println("Error !"+ ex.getMessage()+" No es un numero");
+                menu2 = 100;
+            }
+            switch (menu2){
                 case OPCION_MENU_RESERVAR:
                     IImplementarMain reserva = new ImplementarMain();
-                    reserva.reservar(palcoList,plateaList,galeriaList,opcion,numeral);
+                    reserva.reservar(palcoList,plateaList,galeriaList, String.valueOf(opcion),numeral,menu2);
 
                     break;
                 case OPCION_MENU_DISPONIBLES:
@@ -47,7 +54,7 @@ public class Main {
                     break;
             }
 
-        }while (menu != OPCION_MENU_SALIR);
+        }while (menu2 != OPCION_MENU_SALIR);
     }
     //declaracion del menú
     public static final int OPCION_MENU_RESERVAR =1;
