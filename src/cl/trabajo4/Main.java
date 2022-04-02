@@ -6,9 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int numeralplatea = 34;
-        int numeralPalco=67;
-        int numeralgaleria=1;
+        int numeral=1;
         int opcion=0;
         int menu=0;
 
@@ -18,15 +16,18 @@ public class Main {
         ArrayList<Galeria>galeriaList = new ArrayList<>();
         ArrayList<Platea>plateaList = new ArrayList<>();
         for (int i=1; i<=33; i++ ){
-            palcoList.add(new Palco(numeralPalco,100000,false,"Palco",true));
-            numeralPalco+=1;
-            plateaList.add(new Platea(numeralplatea,60000,false,"Platea",true));
-            numeralplatea+=1;
-            galeriaList.add(new Galeria(numeralgaleria,30000,false,"Galeria"));
-            numeralgaleria+=1;
+            galeriaList.add(new Galeria(numeral,30000,false,"Galeria"));
+            numeral+=1;
+        }
+        for (int i=1; i<=33; i++ ){
+            plateaList.add(new Platea(numeral,60000,false,"Platea",true));
+            numeral+=1;
+        }
+        for (int i=1; i<=34; i++ ){
+            palcoList.add(new Palco(numeral,100000,false,"Palco",true));
+            numeral+=1;
         }
 
-        palcoList.add(new Palco(100,100000,false,"Palco",true));
         do {
             System.out.println("bienvenido al sistema de reserva de asientos de no se que ");
             System.out.println(" presiona [1] para reservar asiento");
@@ -35,7 +36,7 @@ public class Main {
             menu=scan.nextInt();
             switch (menu){
                 case OPCION_MENU_RESERVAR:
-                    reservar(palcoList,plateaList,galeriaList,opcion);
+                    reservar(palcoList,plateaList,galeriaList,opcion,numeral);
 
                     break;
                 case OPCION_MENU_DISPONIBLES:
@@ -132,7 +133,7 @@ public class Main {
     }
 
     public static void reservar(ArrayList<Palco> palcoList, ArrayList<Platea>plateaList, ArrayList<Galeria>galeriaList,
-                                int opcion){
+                                int opcion, int numeral){
         Scanner scan = new Scanner(System.in);
         boolean bandera = true;
         //platea tiene asientos desde el 34 al 66, galeria tiene asientos desde 1 al 33 y los demas son palco
@@ -140,7 +141,7 @@ public class Main {
                 "desde [67 al 100]");
         System.out.println("escriba el numero del asiento que desea");
         opcion=scan.nextInt();
-        for (int i=0; i<palcoList.size()&&i<galeriaList.size()&&i<plateaList.size(); i++) {
+        for (int i=0; i<palcoList.size(); i++) {
             if (palcoList.get(i).getNumAsiento() == opcion) {
                 bandera = false;
                 if (!palcoList.get(i).isReservado()) {
