@@ -150,18 +150,24 @@ public class Main {
                 } else {
                     System.out.println("No puede reservar el asiento ya que se encuentra reservado con antelacion");
                 }
-            } else if (plateaList.get(i).getNumAsiento() == opcion) {
-                bandera = false;
-                if (!plateaList.get(i).isReservado()) {
-                    plateaList.get(i).setReservado(true);
-                    System.out.println("Usted acaba de reservar un asiento en platea");
-                } else {
-                    System.out.println("No puede reservar el asiento ya que se encuentra reservado con antelacion");
+            }
+        }
+        for (int o=0; o<plateaList.size(); o++) {
+            if (plateaList.get(o).getNumAsiento() == opcion) {
+                    bandera = false;
+                    if (!plateaList.get(o).isReservado()) {
+                        plateaList.get(o).setReservado(true);
+                        System.out.println("Usted acaba de reservar un asiento en platea");
+                    } else {
+                        System.out.println("No puede reservar el asiento ya que se encuentra reservado con antelacion");
+                    }
                 }
-            } else if (galeriaList.get(i).getNumAsiento() == opcion) {
+            }
+        for (int u=0; u<plateaList.size(); u++) {
+            if (galeriaList.get(u).getNumAsiento() == opcion) {
                 bandera = false;
-                if (!galeriaList.get(i).isReservado()) {
-                    galeriaList.get(i).setReservado(true);
+                if (!galeriaList.get(u).isReservado()) {
+                    galeriaList.get(u).setReservado(true);
                     System.out.println("Usted acaba de reservar un asiento en galeria");
                 } else {
                     System.out.println("No puede reservar el asiento ya que se encuentra reservado con antelacion");
