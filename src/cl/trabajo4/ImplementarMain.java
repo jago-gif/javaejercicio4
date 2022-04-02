@@ -3,7 +3,7 @@ package cl.trabajo4;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ImplementarMain implements IAsientos{
+public class ImplementarMain implements IImplementarMain {
 
 
 

@@ -32,17 +32,17 @@ public class Main {
             menu=scan.nextInt();
             switch (menu){
                 case OPCION_MENU_RESERVAR:
-                    IAsientos reserva = new ImplementarMain();
+                    IImplementarMain reserva = new ImplementarMain();
                     reserva.reservar(palcoList,plateaList,galeriaList,opcion,numeral);
 
                     break;
                 case OPCION_MENU_DISPONIBLES:
-                    IAsientos disponibles = new ImplementarMain();
+                    IImplementarMain disponibles = new ImplementarMain();
                     disponibles.disponibles(palcoList,plateaList,galeriaList);
 
                     break;
                 case OPCION_MENU_VER_RECAUDACIONES:
-                    IAsientos recaudar = new ImplementarMain();
+                    IImplementarMain recaudar = new ImplementarMain();
                     recaudar.recaudar(palcoList,plateaList,galeriaList);
                     break;
             }

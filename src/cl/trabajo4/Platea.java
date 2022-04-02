@@ -19,6 +19,6 @@ public class Platea extends Asiento {
 
     @Override
     public String toString() {
-        return "Los asientos de platea cuentan con acolchado en asiento y apoya brazos";
+        return "Los asientos de platea cuentan con acolchado en asiento";
     }
 }

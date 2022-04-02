@@ -2,7 +2,7 @@ package cl.trabajo4;
 
 import java.util.ArrayList;
 
-public interface IAsientos {
+public interface IImplementarMain {
 
     void disponibles(ArrayList<Palco> palcoList, ArrayList<Platea>plateaList, ArrayList<Galeria>galeriaList);
 
